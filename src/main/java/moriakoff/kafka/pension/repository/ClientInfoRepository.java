@@ -1,6 +1,6 @@
-package moriakoff.kafka.pension.dao.repository;
+package moriakoff.kafka.pension.repository;
 
-import moriakoff.kafka.pension.dao.model.ClientInfo;
+import moriakoff.kafka.pension.model.entity.ClientInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

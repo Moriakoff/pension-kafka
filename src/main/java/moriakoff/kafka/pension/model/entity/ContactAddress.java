@@ -1,4 +1,4 @@
-package moriakoff.kafka.pension.dao.model;
+package moriakoff.kafka.pension.model.entity;
 
 import lombok.*;
 

@@ -1,10 +1,9 @@
-package moriakoff.kafka.pension.config;
+package moriakoff.kafka.pension.configuration;
 
-import moriakoff.kafka.pension.controller.dto.PaymentDto;
+import moriakoff.kafka.pension.model.dto.PaymentDto;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
@@ -18,13 +17,13 @@ import java.util.Map;
 
 @Component
 @EnableKafka
-public class KafkaConfig {
+public class KafkaConfiguration {
 
     @Value(value = "${kafka.bootstrapAddress}")
     private String bootstrapAddress;
 
     @Bean
-    @ConditionalOnMissingBean(ConsumerFactory.class)
+    /*@ConditionalOnMissingBean(ConsumerFactory.class)*/
     public ConsumerFactory <String, PaymentDto> paymentDtoConsumerFactory() {
 
         JsonDeserializer<PaymentDto> deserializer = new JsonDeserializer<>(PaymentDto.class);
@@ -45,7 +44,6 @@ public class KafkaConfig {
     }
 
     @Bean
-    @ConditionalOnMissingBean(name = "paymentDtoKafkaContainerFactory")
     public ConcurrentKafkaListenerContainerFactory <String, PaymentDto> paymentDtoKafkaContainerFactory() {
 
         ConcurrentKafkaListenerContainerFactory <String, PaymentDto> factory =

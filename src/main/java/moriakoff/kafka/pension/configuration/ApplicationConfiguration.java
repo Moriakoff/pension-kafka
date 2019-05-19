@@ -1,4 +1,4 @@
-package moriakoff.kafka.pension.config;
+package moriakoff.kafka.pension.configuration;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class ApplicationConfig {
+public class ApplicationConfiguration {
 
     @Bean
     public ModelMapper modelMapper(){

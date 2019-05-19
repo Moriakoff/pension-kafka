@@ -1,4 +1,4 @@
-package moriakoff.kafka.pension.dao.model.type;
+package moriakoff.kafka.pension.model.type;
 
 public enum TransactionType {
     DEPOSIT, WITHDRAW, FREEZE, DEFREEZE;

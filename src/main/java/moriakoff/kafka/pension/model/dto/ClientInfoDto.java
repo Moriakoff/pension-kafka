@@ -1,4 +1,4 @@
-package moriakoff.kafka.pension.controller.dto;
+package moriakoff.kafka.pension.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

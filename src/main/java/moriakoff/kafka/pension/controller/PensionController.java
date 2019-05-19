@@ -1,6 +1,6 @@
 package moriakoff.kafka.pension.controller;
 
-import moriakoff.kafka.pension.controller.dto.ClientBalanceDto;
+import moriakoff.kafka.pension.model.dto.ClientBalanceDto;
 import moriakoff.kafka.pension.service.PensionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

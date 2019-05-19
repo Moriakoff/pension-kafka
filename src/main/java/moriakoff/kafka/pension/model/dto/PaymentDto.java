@@ -1,7 +1,7 @@
-package moriakoff.kafka.pension.controller.dto;
+package moriakoff.kafka.pension.model.dto;
 
 import lombok.*;
-import moriakoff.kafka.pension.dao.model.type.TransactionType;
+import moriakoff.kafka.pension.model.type.TransactionType;
 
 import javax.validation.constraints.Positive;
 

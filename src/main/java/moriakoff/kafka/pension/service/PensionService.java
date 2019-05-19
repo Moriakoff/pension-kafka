@@ -1,19 +1,17 @@
 package moriakoff.kafka.pension.service;
 
-import moriakoff.kafka.pension.controller.dto.ClientBalanceDto;
-import moriakoff.kafka.pension.controller.dto.ClientInfoDto;
-import moriakoff.kafka.pension.controller.dto.ContactAddressDto;
-import moriakoff.kafka.pension.controller.dto.PaymentDto;
-import moriakoff.kafka.pension.dao.model.ClientInfo;
-import moriakoff.kafka.pension.dao.model.ContactAddress;
-import moriakoff.kafka.pension.dao.model.Payment;
-import moriakoff.kafka.pension.dao.model.type.TransactionType;
-import moriakoff.kafka.pension.dao.repository.ClientInfoRepository;
-import moriakoff.kafka.pension.dao.repository.ContactAddressRepository;
-import moriakoff.kafka.pension.dao.repository.PaymentRepository;
-import org.modelmapper.ModelMapper;
+import moriakoff.kafka.pension.model.dto.ClientBalanceDto;
+import moriakoff.kafka.pension.model.dto.ClientInfoDto;
+import moriakoff.kafka.pension.model.dto.ContactAddressDto;
+import moriakoff.kafka.pension.model.dto.PaymentDto;
+import moriakoff.kafka.pension.model.entity.ClientInfo;
+import moriakoff.kafka.pension.model.entity.ContactAddress;
+import moriakoff.kafka.pension.model.entity.Payment;
+import moriakoff.kafka.pension.model.type.TransactionType;
+import moriakoff.kafka.pension.repository.ClientInfoRepository;
+import moriakoff.kafka.pension.repository.ContactAddressRepository;
+import moriakoff.kafka.pension.repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,11 +28,6 @@ public class PensionService {
     @Autowired
     private ContactAddressRepository contactAddressRepository;
 
-    @Autowired
-    private ModelMapper modelMapper;
-
-
-    @KafkaListener(topics = "paymentTest", containerFactory = "paymentDtoKafkaContainerFactory")
     public void paymentOperation(PaymentDto paymentDto) {
 
         Payment payment = savePayment(paymentDto);
